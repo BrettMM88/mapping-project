@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<title>TravelPup: Weather & Navigation</title>
+		<!-- My style sheet & javascript files -->
+		<!--<link rel="stylesheet" type="text/css" href="style.css">-->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="weather.js"></script>
+		<script src="mapping.js"></script>
+		<!-- jQuery include file -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+		<!-- Google Maps include file -->
+		<script type="text/javascript" async defer src="https://maps.googleapis.com/maps/api/js?v=3&key=">	</script>
+		<script src="https://cdn.jsdelivr.net/bluebird/latest/bluebird.js"> </script>
+		<script>
+			$.ajaxSetup({cache: false});
+		</script>
+	</head>
+	<body onLoad=loadMap()>
+		<div class="header">
+			<div class="item 1" id="left-controls">Location: <input id="start" type="text" width="200" value="Salina, KS"></div>
+			<div class="item 2" id="right-controls">Destination: <input id="end" type="text" width="200" value="Kansas City, KS"></div>
+			<button id="search">Search</button>
+		</div>
+		<div class="main">
+			<div id="map"></div>
+		</div>
+		<div id="directions-display"></div>
+		<button id="directionsBtn">Show Directions</button>
+		<span id="placeMarkers">Place Markers Every: 
+		<select id="mileage-selected" onChange=showMarkers()>
+			<option value=50>50 miles</option>
+			<option value=100>100 miles</option>
+			<option value=250>250 miles</option>
+			<option value=500>500 miles</option>
+		</select></span>
+		<div class="footer">
+			&copy; 2019 Brett Magee</span>
+			<a href="https://darksky.net/poweredby/">Powered by Dark Sky</a>
+			<!--Loading Icon &copy; https://dribbble.com/marisahsu-->
+			<!--<a href="https://www.vexels.com/vectors/preview/659/vector-weather-icons">Vector Weather Icons</a> &copy; <a href="https://www.vexels.com/">Vexels</a>-->
+		</div>
+	</body>
+</html>

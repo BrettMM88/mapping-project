@@ -1,0 +1,144 @@
+html,body{
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: #FFF;
+  font-family: Sans-Serif;
+  font-size: 1em;
+  background-color: #6B6F7C;
+  overflow: hidden;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto 9fr;
+  grid-template-rows: 50px auto 30px;
+  grid-template-areas: "header header" 
+                      "directions-display main"
+                      "footer footer";
+}
+
+input[type=text] {
+	height: 1em;
+	width: 85%;
+	max-width: 300px;
+	font-size: 1em;
+	outline: none;
+	border: 1px solid #cdcdcd;
+	border-color: rgba(0, 0, 0, .15);
+	background-color: white;
+}
+
+#directions-display {
+	grid-area: directions-display;
+	background-color: #D7DAE5; 
+	overflow: auto;
+	width: 0px;
+	transition: all 1s;
+}
+
+.header {
+	grid-area: header;
+	display: grid;
+	grid-template-columns: 1fr 1fr 0.3fr;
+	grid-gap: 0px;
+	background-color: gray;
+}
+
+.item {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+}
+
+.main{
+	grid-area: main;
+	background-color: maroon;
+}
+
+.footer{
+	grid-area: footer;
+	padding: 2px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background-color: #8E95AF;
+	font-size: .8em;
+	text-align: center;
+	white-space: nowrap;
+}
+
+
+#map {
+	height: 100%;
+	width: 100%;
+	background-color: #6B6F7C;
+}
+
+#left-controls, #right-controls {
+	background-color: #B8BFD8;
+	order: 1px solid white;
+	margin: 1px;
+	color: black;
+	
+}
+
+#search {
+	width: 100%;
+	padding: 5px;
+	background: #8E95AF;
+	color: white;
+	font-size: 1.5em;
+	border: 1px solid grey;
+	border-left: none; /* Prevent double borders */
+	cursor: pointer;
+}
+
+#placeMarkers {
+	position: absolute;
+	float: right;
+	right: 0px;
+	bottom: 30px;
+	font-size: 1em;
+	z-index: 100;
+	background-color: gray;
+	padding: 2px;
+	border: 1px solid black;
+}
+#mileage-selected {
+	font-size: 1em;
+}
+#directionsBtn {
+	position: absolute;
+	bottom: 45%;
+	left: 0px;
+	float: left;
+	font-size: 1em;
+	z-index: 100;
+	transform-origin: top left;
+	transform:rotate(-90deg);
+	background-color: #6B6F7C;
+	color: white;
+	transition: all 1s;
+}
+
+.weatherBlock {
+	color: black;
+}
+
+.weatherBlock #temp {
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+}
+.weatherBlock #description {
+	font-size: 0.9em;
+	text-align: center;
+}
+.weatherBlock #travelTime {
+	text-align: center;
+	font-size: 0.9em;
+}
+
+
+
